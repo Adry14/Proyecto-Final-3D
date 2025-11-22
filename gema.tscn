@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh216uyremglb"]
+
+[ext_resource type="PackedScene" uid="uid://dos6uhnf3n277" path="res://Gema/chaos_emerald.glb" id="1_8h8rr"]
+[ext_resource type="Script" uid="uid://bak45760hge81" path="res://GDs/gema.gd" id="1_k48bk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k48bk"]
+
+[node name="Gema" type="Area3D"]
+collision_layer = 5
+collision_mask = 2
+script = ExtResource("1_k48bk")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_8h8rr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010335445, 0.039461136, -0.018918514)
+shape = SubResource("SphereShape3D_k48bk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

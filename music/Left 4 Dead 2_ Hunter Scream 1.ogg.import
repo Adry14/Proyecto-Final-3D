@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://u8o1tns8n1k2"
+path="res://.godot/imported/Left 4 Dead 2_ Hunter Scream 1.ogg-d9094461de8536ea2a517d8a1c07990a.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Left 4 Dead 2_ Hunter Scream 1.ogg"
+dest_files=["res://.godot/imported/Left 4 Dead 2_ Hunter Scream 1.ogg-d9094461de8536ea2a517d8a1c07990a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

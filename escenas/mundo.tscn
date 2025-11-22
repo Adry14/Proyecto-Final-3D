@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://8baamm121pwh"]
+
+[ext_resource type="Script" uid="uid://dhbld7o6bgpec" path="res://escenas/mundo.gd" id="1_16hu1"]
+[ext_resource type="PackedScene" uid="uid://di3fj123eiki5" path="res://escenas/mapa_1.tscn" id="1_cdbbl"]
+[ext_resource type="AudioStream" uid="uid://d3qpfm5jrtdws" path="res://music/sonido ambiente de terror horror sound effect.ogg" id="2_6wjgb"]
+[ext_resource type="AudioStream" uid="uid://cf2doqhree2m0" path="res://music/SONIDO de BUHO 🔊(EFECTO DE SONIDO) Owl Sound.ogg" id="3_v12yk"]
+[ext_resource type="AudioStream" uid="uid://drspjp8kyl0xp" path="res://music/El llanto del lobo solitario...1.ogg" id="4_16hu1"]
+[ext_resource type="AudioStream" uid="uid://euktvad03po6" path="res://music/Witch(Solo Sonido).ogg" id="6_4vydk"]
+[ext_resource type="AudioStream" uid="uid://ctgprtkxdy2rn" path="res://music/Jurassic Park 3 Satelite Phone Ringtone Sound Effect (HD).ogg" id="7_txhqv"]
+[ext_resource type="AudioStream" uid="uid://df07nw3whb638" path="res://music/Spinosaurus Sound Effects.ogg" id="8_txhqv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cdbbl"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.19414508, 0.18639508, 0.17739508, 1)
+ground_horizon_color = Color(0.19414508, 0.18639508, 0.17739508, 1)
+
+[sub_resource type="Sky" id="Sky_6wjgb"]
+sky_material = SubResource("ProceduralSkyMaterial_cdbbl")
+
+[sub_resource type="Environment" id="Environment_glrvs"]
+background_mode = 2
+sky = SubResource("Sky_6wjgb")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Mundo" type="Node3D"]
+script = ExtResource("1_16hu1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.9097471, -0.41398305, -0.031279277, 0.023722805, -0.12705506, 0.9916119, -0.41448468, 0.901374, 0.1254088, 0, 25.025957, 0)
+light_color = Color(0.27450982, 0.32941177, 0.3372549, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glrvs")
+
+[node name="mapa1" parent="." instance=ExtResource("1_cdbbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4576893, 0, -4.7610826)
+
+[node name="Ambiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6wjgb")
+volume_db = -0.16
+autoplay = true
+
+[node name="Buho" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v12yk")
+volume_db = -13.951
+autoplay = true
+max_polyphony = 10
+
+[node name="Timer" type="Timer" parent="Buho"]
+wait_time = 20.0
+autostart = true
+
+[node name="Lobo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_16hu1")
+volume_db = -27.902
+autoplay = true
+max_polyphony = 10
+
+[node name="Timer2" type="Timer" parent="Lobo"]
+wait_time = 30.0
+autostart = true
+
+[node name="Witch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4vydk")
+
+[node name="Timer" type="Timer" parent="Witch"]
+wait_time = 70.0
+autostart = true
+
+[node name="cell" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_txhqv")
+
+[node name="Timer" type="Timer" parent="cell"]
+wait_time = 40.0
+autostart = true
+
+[node name="Spino" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_txhqv")
+
+[node name="Timer2" type="Timer" parent="Spino"]
+wait_time = 50.0
+autostart = true
+
+[connection signal="timeout" from="Buho/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Lobo/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Witch/Timer" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="cell/Timer" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="cell/Timer" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Spino/Timer2" to="." method="_on_timer_5_timeout"]
+[connection signal="timeout" from="Spino/Timer2" to="." method="_on_timer_3_timeout"]

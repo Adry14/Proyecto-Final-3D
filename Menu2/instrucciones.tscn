@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjhc86msup52j"]
+
+[ext_resource type="Script" uid="uid://degg2fqm44i3m" path="res://Menu2/instrucciones.gd" id="1_87jxx"]
+[ext_resource type="Texture2D" uid="uid://d3kyfwp2b7axu" path="res://Banners/Inicio.png" id="2_54dmn"]
+[ext_resource type="AudioStream" uid="uid://c7x6bxbqk1sdh" path="res://music/La la la...cancion de terror.ogg" id="3_0lcjo"]
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87jxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(608.5, 324.00003)
+scale = Vector2(0.76830816, 0.9583334)
+texture = ExtResource("2_54dmn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0lcjo")
+volume_db = -32.976
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 1061.0
+offset_bottom = 438.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Instrucciones
+
+Movimientos de jugador:
+Teclas:
+A-izquierda
+D-derecha
+S-abajo
+W-arriba
+F-agacharse
+shift-correr
+
+Reglas de juegos
+El juego consiste en un laberinto el cual debes de juntar una cierta cantidad 
+de gemas dispersas en el mapa para poder generar un portal para terminar
+el nivel, en el mapa dependiendo de la dificultad, te encontraras con mas o 
+menor cantidad tanto de monstruos como la cantidad total de gemas que 
+debes de recolectar para finalizar el nivel tras buscar la salida del laberinto,
+
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 526.0
+offset_right = 531.0
+offset_bottom = 631.0
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Menu"
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Salir"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0lcjo")
+volume_db = -32.976
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

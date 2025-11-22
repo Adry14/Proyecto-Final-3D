@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctgprtkxdy2rn"
+path="res://.godot/imported/Jurassic Park 3 Satelite Phone Ringtone Sound Effect (HD).ogg-bb5b39758e6db20dabac56140b92ea3d.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Jurassic Park 3 Satelite Phone Ringtone Sound Effect (HD).ogg"
+dest_files=["res://.godot/imported/Jurassic Park 3 Satelite Phone Ringtone Sound Effect (HD).ogg-bb5b39758e6db20dabac56140b92ea3d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://7gh807n77ftm"]
+
+[ext_resource type="Script" uid="uid://c1wxqdpkrsfvj" path="res://GDs/game_over_screen.gd" id="1_l4tlu"]
+[ext_resource type="Texture2D" uid="uid://dn83ok1wbgmkt" path="res://Banners/Game over.png" id="2_fdghx"]
+[ext_resource type="Texture2D" uid="uid://dji7h5o4xgf6r" path="res://Banners/GameOverMrTerror.png" id="3_2yv1s"]
+[ext_resource type="AudioStream" uid="uid://d2d4he5g40r1n" path="res://music/la risa del diablo.ogg" id="4_fdghx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmhko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fdghx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2yv1s")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 0.5
+}]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l4tlu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(619.3301, 322.00613)
+scale = Vector2(0.9305509, 0.85678685)
+sprite_frames = SubResource("SpriteFrames_tmhko")
+animation = &"Idle"
+frame_progress = 0.8273114
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 369.0
+offset_right = 831.0
+offset_bottom = 482.0
+
+[node name="Repetir" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 0.2627451, 0.105882354, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Repetir"
+
+[node name="Volver al menu" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 0.90588236, 0.39607844, 1)
+layout_mode = 2
+text = "Volver al menu"
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fdghx")
+volume_db = -21.561
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Repetir" to="." method="_on_repetir_pressed"]
+[connection signal="pressed" from="VBoxContainer/Volver al menu" to="." method="_on_volver_al_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

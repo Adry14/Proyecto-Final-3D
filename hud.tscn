@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckyyhva2xb25j"]
+
+[ext_resource type="Script" uid="uid://mh40alob2yyt" path="res://GDs/hud.gd" id="1_1xsix"]
+[ext_resource type="Script" uid="uid://db8dbjebd6810" path="res://GDs/label.gd" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://rd1oqqlkol6i" path="res://Player/vida100.png" id="2_64ctp"]
+[ext_resource type="Texture2D" uid="uid://coqqsqnibdmiy" path="res://Player/1763685957138.png" id="4_1xsix"]
+[ext_resource type="Script" uid="uid://cgo7dsudwtd7q" path="res://GDs/aguja.gd" id="5_a2258"]
+[ext_resource type="Texture2D" uid="uid://b4nix4dxbjb43" path="res://Player/1763685903611.png" id="5_rftc2"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1xsix")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("1_37p78")
+
+[node name="Vida" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 41.0
+offset_right = 40.0
+offset_bottom = 82.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Vida"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="TextureRect2" type="TextureRect" parent="Vida"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="TextureRect3" type="TextureRect" parent="Vida"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="TextureRect4" type="TextureRect" parent="Vida"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Brujula" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.901
+anchor_right = 1.0
+anchor_bottom = 0.142
+offset_left = 64.04797
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -53.016006
+
+[node name="Fondo" type="TextureRect" parent="Brujula"]
+layout_mode = 0
+offset_left = -63.999878
+offset_top = 2.9999998
+offset_right = 497.00012
+offset_bottom = 563.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_1xsix")
+
+[node name="Aguja" type="TextureRect" parent="Brujula"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 24.0
+offset_right = 228.00012
+offset_bottom = 714.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_rftc2")
+script = ExtResource("5_a2258")
+
+[node name="FiltroOscuro" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmyt3idigk0wr"
+path="res://.godot/imported/Bear Sound Effect.ogg-9704b628b72aa2e46ccebd8e55183848.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Bear Sound Effect.ogg"
+dest_files=["res://.godot/imported/Bear Sound Effect.ogg-9704b628b72aa2e46ccebd8e55183848.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

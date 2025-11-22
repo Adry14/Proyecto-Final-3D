@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7x6bxbqk1sdh"
+path="res://.godot/imported/La la la...cancion de terror.ogg-f7a1184fbab13a9a96818ddd44108aff.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/La la la...cancion de terror.ogg"
+dest_files=["res://.godot/imported/La la la...cancion de terror.ogg-f7a1184fbab13a9a96818ddd44108aff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

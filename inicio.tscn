@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyhrkhaylhnq"]
+
+[ext_resource type="Script" uid="uid://c8w5lglbs4xxk" path="res://GDs/inicio.gd" id="1_q0xg8"]
+[ext_resource type="Texture2D" uid="uid://d3kyfwp2b7axu" path="res://Banners/Inicio.png" id="2_yogrx"]
+[ext_resource type="AudioStream" uid="uid://c7x6bxbqk1sdh" path="res://music/La la la...cancion de terror.ogg" id="3_yogrx"]
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q0xg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(608.5, 324.00003)
+scale = Vector2(0.76830816, 0.9583334)
+texture = ExtResource("2_yogrx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 386.0
+offset_right = 521.0
+offset_bottom = 546.0
+
+[node name="Iniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Iniciar"
+
+[node name="Dificultad" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Dificultad"
+
+[node name="Reglas" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8901961, 0.90588236, 1)
+theme_override_font_sizes/font_size = 18
+text = "Dificultad Explicada"
+
+[node name="Intrucciones" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.3529412, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Intrucciones "
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yogrx")
+volume_db = -32.976
+autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 430.0
+offset_right = 622.0
+offset_bottom = 515.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Normal" type="Button" parent="Panel/VBoxContainer"]
+modulate = Color(0.07058824, 1, 0, 1)
+layout_mode = 2
+text = "Normal"
+
+[node name="Dificil" type="Button" parent="Panel/VBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+text = "Dificil"
+
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Dificultad" to="." method="_on_dificultad_pressed"]
+[connection signal="pressed" from="VBoxContainer/Reglas" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Intrucciones" to="." method="_on_intrucciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
